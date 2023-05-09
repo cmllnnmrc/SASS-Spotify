@@ -1,10 +1,11 @@
 $clr-dark: #000000;
 $clr-green: #1acf5e;
 $clr-purple: #B02897;
-// $clr-l-green: hsl(160, 32%, 87%);
+$clr-gray: #EFEFEF;
 $clr-l-dark: #191414;
 $clr-light: #ffffff;
-// $clr-transparent: transparent;
+$clr-blue: #0D72EA;
+$clr-d-gray: #535353;
 
 $break-sm: 500px;
 $break-md: 768px;
@@ -33,11 +34,43 @@ $break-xl: 1920px;
   .btn.white{
     font-size: 1.5rem;
     font-weight: 600;
-    color: #f5f5f5;
+    color: $clr-light;
     background: transparent;
     border: 2px solid $clr-light;
   }
 
   .btn.white:hover{
+    transform: scale(1.05);
+  }
+
+  .btn.blue-shallow{
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: $clr-blue;
+    background: transparent;
+    border: 1px solid $clr-blue;
+  }
+
+  .btn.blue{
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: $clr-light;
+    background: $clr-blue;
+    border: 1px solid $clr-blue;
+  }
+
+  .btn.dark{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f5f5f5;
+    background: $clr-dark;
+    border: 1px solid $clr-dark;
+  }
+
+  .btn.dark:hover{
     transform: scale(1.05);
   }

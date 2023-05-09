@@ -1,0 +1,57 @@
+.footer{
+    background: $clr-dark;
+    
+    &__wrapper{
+        padding: 5rem 1rem;
+    }
+
+    img{
+        width: 10rem;
+        margin-bottom: 5rem;
+    }
+
+    &__text{
+        display: block;
+        margin-bottom: 5rem;
+
+        h5{
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: $clr-d-gray;
+            margin-bottom: 3rem;
+        }
+
+        ul{
+            li{
+                margin-bottom: 2.5rem;
+
+                a{
+                    color: $clr-light;
+
+                    &:hover{
+                        color: $clr-green;
+                    }
+                }
+            }
+        }
+    }
+
+    &__icons{
+        ul{
+            display: flex;
+            
+            li{
+                margin-right: 1.5rem;
+                align-items: center;
+                padding: 1.5rem;
+                background: rgb(83, 83, 83, .3);
+                border-radius: 100%;
+
+                a{
+                    color: $clr-light;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}

@@ -101,3 +101,249 @@
         }
     }
 }
+
+.services{
+    &__title{
+        h3{
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 2rem 0 5rem 0;
+            text-align: center;
+        }
+    }
+
+    &__items{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5rem;
+
+        img{
+            @include imgFit(25%, 20%)
+        }
+    }
+
+    &__text{
+        margin-left: 3rem;
+
+        h4{
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        &__title{
+            h3{
+                font-size: 3.5rem;
+                margin: 5rem 0 8rem 0;
+            }
+        }
+
+        &__wrapper{
+            @include grid(4, 3rem);
+            padding-bottom: 5rem;
+        }
+    
+        &__items{
+            flex-direction: column;
+            align-items: center;
+
+            img{
+                @include imgFit(50%, 70%);
+                margin-bottom: 3rem;
+            }
+        }
+    
+        &__text{    
+            text-align: center;
+            margin-left: 0;
+
+            h4{
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
+
+.offers{
+    background: $clr-gray;
+
+    &__title{
+        text-align: center;
+        margin: 5rem 0 2rem 0;
+
+        h3{
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        p{
+            margin: 2rem;
+        }
+    }
+
+    &__icons{
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0 5rem 0;
+
+        ul{
+            @include grid(6, 1rem);
+
+            li{
+                img{
+                    width: 3rem;
+                }
+            }
+        }
+    }
+
+    .icon__text{
+        position: relative;
+
+        ul{
+            position: absolute;
+            right: 5rem;
+            top: 2rem;
+            background: $clr-light;
+            padding: 1rem;
+            border-radius: .5rem;
+            display: none;
+        }
+
+        p{
+            margin-left: -3rem;
+            text-decoration: underline;
+        }
+
+        &:hover{
+            ul{
+                display: unset;
+                @include grid(3, 1rem);
+            }
+        }
+    }
+
+    &__card{
+        background: $clr-light;
+        max-height: 100%;
+        border-radius: 1rem;
+        margin: 2rem 2rem;
+        padding: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 8px;
+
+        &:last-child{
+            margin-bottom: 5rem;
+        }
+
+        .text{
+            color: $clr-d-gray;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            line-height: 1.8rem;
+
+            a{
+                color: $clr-d-gray;
+                font-size: 1.3rem;
+                text-align: justify;
+                padding-top: 2rem;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__services{
+        h5{
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p{
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+
+            &:last-child{
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+
+    &__benefits{
+        ul{
+            border-top: 2px solid rgb(83, 83, 83, .5);
+            padding-top: 3rem;
+
+            li{
+                margin-bottom: 2rem;
+                display: flex;
+
+                i{
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+    }
+
+    &__btn{
+        a{
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        &__icons{
+            margin-bottom: 5rem
+        }
+
+        .icon__text{
+            ul{
+                right: 42rem;
+                top: 2.5rem;
+            }
+    
+            p{
+                margin-left: -3rem;
+                text-decoration: underline;
+            }
+    
+            &:hover{
+                ul{
+                    display: unset;
+                    @include grid(3, 1rem);
+                }
+            }
+        }
+
+        &__wrapper{
+            @include grid(5, 1rem);
+            margin-bottom: 5rem;
+        }
+
+        &__card{
+            margin: 0;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+
+        &__services{
+            min-height: 25rem;
+        }
+
+        &__benefits{
+            justify-content: flex-start;
+            min-height: 28rem;
+
+            ul{
+                li{
+                    align-items: start;
+                }
+            }
+        }
+    }
+}
