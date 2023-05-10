@@ -1,56 +1,83 @@
 .footer{
     background: $clr-dark;
-    
-    &__wrapper{
-        padding: 5rem 1rem;
-    }
+    padding-bottom: 5rem;
 
-    img{
-        width: 10rem;
-        margin-bottom: 5rem;
-    }
+    h5{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
 
-    &__text{
-        display: block;
-        margin-bottom: 5rem;
-
-        h5{
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: $clr-d-gray;
-            margin-bottom: 3rem;
+        img{
+            width: 1.2rem;
         }
 
-        ul{
-            li{
-                margin-bottom: 2.5rem;
+        span{
+            font-size: 1rem;
+            color: $clr-d-gray;
 
-                a{
-                    color: $clr-light;
-
-                    &:hover{
-                        color: $clr-green;
-                    }
-                }
+            &:hover{
+                color: $clr-green;
             }
         }
     }
 
-    &__icons{
+    &__content{
+        display: flex;
+        justify-content: space-between;
+
         ul{
+            max-width: 60%;
             display: flex;
-            
+            flex-wrap: wrap;
+            gap: 2rem;
+
             li{
-                margin-right: 1.5rem;
-                align-items: center;
-                padding: 1.5rem;
-                background: rgb(83, 83, 83, .3);
-                border-radius: 100%;
+                text-align: start;
+                &:hover{
+                    a{
+                        color: $clr-green;
+                    }
+                }
 
                 a{
-                    color: $clr-light;
-                    font-size: 2rem;
+                    font-size: 1rem;
+                    color: $clr-d-gray;
                 }
+            }
+        }
+
+        p{
+            margin-top: .5rem;
+            font-size: 1rem;
+            color: $clr-d-gray;
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        h5{
+            img{
+                width: 1rem;
+            }
+    
+            span{
+                font-size: 1rem;
+                color: $clr-light;
+            }
+        }
+    
+        &__content{
+            display: flex;
+            align-items: center;
+    
+            ul{
+                gap: 2rem;
+                display: flex;
+            }
+    
+            p{
+                margin-top: 0;
             }
         }
     }

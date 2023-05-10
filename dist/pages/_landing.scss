@@ -48,21 +48,10 @@
 
     img{
         justify-self: center;
-        width: 65%;
+        @include imgFit(30rem, 100%);
     }
 
-    @include mediaQuery($break-lg){
-        &{
-            padding: 7.5rem 0 0rem 0;
-        }
-
-        &__wrapper{
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-gap: 2rem;
-            align-items: center;
-        }
-
+    @include mediaQuery($break-md){
         &__text{
             h1{
                 font-size: 4rem;
@@ -94,10 +83,42 @@
                 margin-bottom: 2rem;
             }
         }
+    }
+
+    @include mediaQuery(992px){
+        &{
+            padding-top: 7rem;
+        }
+
+        img{
+            justify-self: center;
+            @include imgFit(30rem, 100%);
+        }
+    }
+
+    @include mediaQuery(1200px){
+        &__wrapper{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 2rem;
+            align-items: center;
+        }
+
+        &__btn{
+            display: flex;
+            flex-direction: row;
+            margin-right: 2rem;
+    
+            a{
+                margin-right: 1rem;
+                padding: 1.5rem 3rem;
+                margin-bottom: 2rem;
+            }
+        }
 
         img{
             justify-self: right;
-            width: 90%;
+            @include imgFit(100%, 90%);
         }
     }
 }
@@ -118,7 +139,7 @@
         margin-bottom: 5rem;
 
         img{
-            @include imgFit(25%, 20%)
+            @include imgFit(10rem, 20%)
         }
     }
 
@@ -128,6 +149,58 @@
         h4{
             font-size: 2rem;
             margin-bottom: 1.5rem;
+        }
+    }
+
+    @include mediaQuery($break-md){   
+        &__title{
+            h3{
+                font-size: 3.5rem;
+                margin: 5rem 0; 
+            }
+        }
+
+        &__wrapper{
+            @include grid(2, 2rem);
+            padding-bottom: 5rem;
+        }
+    
+        &__items{
+            flex-direction: row;
+            align-items: center;
+
+            img{
+                @include imgFit(10rem, 100%);
+                margin-right: 2rem;
+            }
+        }
+    
+        &__text{    
+            text-align: start;
+            margin-left: 0;
+
+            h4{
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    @include mediaQuery(992px){   
+        &__title{
+            h3{
+                font-size: 3.5rem;
+            }
+        }
+    
+        &__items{
+            flex-direction: row;
+            align-items: center;
+
+            img{
+                @include imgFit(10rem, 100%);
+                margin-right: 2rem;
+            }
         }
     }
 
@@ -149,7 +222,7 @@
             align-items: center;
 
             img{
-                @include imgFit(50%, 70%);
+                @include imgFit(15rem, 70%);
                 margin-bottom: 3rem;
             }
         }
@@ -205,11 +278,12 @@
 
         ul{
             position: absolute;
-            right: 5rem;
-            top: 2rem;
+            right: -6rem;
+            top: 2.5rem;
             background: $clr-light;
             padding: 1rem;
             border-radius: .5rem;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 8px;
             display: none;
         }
 
@@ -221,9 +295,15 @@
         &:hover{
             ul{
                 display: unset;
-                @include grid(3, 1rem);
+                @include grid(4, 1rem);
             }
         }
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__card{
@@ -233,6 +313,14 @@
         margin: 2rem 2rem;
         padding: 2rem;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 8px;
+
+        &:first-child{
+            p:last-child{
+                span{
+                    opacity: 0;
+                }
+            }
+        }
 
         &:last-child{
             margin-bottom: 5rem;
@@ -250,6 +338,10 @@
                 text-align: justify;
                 padding-top: 2rem;
                 text-decoration: underline;
+            }
+
+            span{
+                opacity: 0;
             }
         }
     }
@@ -294,17 +386,18 @@
         }
     }
 
-    @include mediaQuery($break-lg){
+    @include mediaQuery($break-md){
+        &__title{
+            h3{
+                font-size: 3rem;
+            }
+        }
+
         &__icons{
             margin-bottom: 5rem
         }
 
         .icon__text{
-            ul{
-                right: 42rem;
-                top: 2.5rem;
-            }
-    
             p{
                 margin-left: -3rem;
                 text-decoration: underline;
@@ -313,7 +406,43 @@
             &:hover{
                 ul{
                     display: unset;
-                    @include grid(3, 1rem);
+                    @include grid(4, 1rem);
+                }
+            }
+        }
+
+        &__card{
+            margin: 0;
+
+            &:last-child{
+                margin-bottom: 5rem;
+            }
+        }
+    }
+
+    @include mediaQuery(992px){
+        &__title{
+            h3{
+                font-size: 4rem;
+            }
+        }
+    }
+
+    @include mediaQuery(1200px){
+        &__icons{
+            margin-bottom: 5rem
+        }
+
+        .icon__text{
+            p{
+                margin-left: -3rem;
+                text-decoration: underline;
+            }
+    
+            &:hover{
+                ul{
+                    display: unset;
+                    @include grid(4, 1rem);
                 }
             }
         }
@@ -321,6 +450,7 @@
         &__wrapper{
             @include grid(5, 1rem);
             margin-bottom: 5rem;
+            align-items: start;
         }
 
         &__card{

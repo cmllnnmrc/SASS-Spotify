@@ -28,7 +28,7 @@
 
     .branding{
         img{
-            width: 9rem;
+            width: 10rem;
         }
     }
 
@@ -123,21 +123,15 @@
         }
     }
 
-    @include mediaQuery($break-sm){
-
+    @include mediaQuery(992px){
+        .blur{
+            display: none;
+        }
     }
 
-    @include mediaQuery($break-md){
-        
-    }
-
-    @include mediaQuery($break-lg){
+    @include mediaQuery($break-lg){  
         &{
             background: $clr-dark;
-        }
-
-        .toggle__menu, .blur{
-            display: none;
         }
 
         .branding{
@@ -145,29 +139,35 @@
                 width: 13rem;
             }
         }
+    }
 
+    @include mediaQuery(1200px){
+        .toggle__menu{
+            display: none;
+        }
+        
         &__nav{
             position: unset;
             width: fit-content;
             height: fit-content;
-
+    
             img{
                 display: none;
             }
-
+    
             ul{
                 display: flex;
                 align-items: center;
                 gap: 2.5rem;
-
+    
                 li{
                     padding: 0;
-
+    
                     a{
                         font-size: 1.5rem;
                         font-weight: 600;
                     }
-
+    
                     &.btn{
                         display: block;
                         
@@ -176,7 +176,7 @@
                         }
                     }
                 }
-
+    
                 span{
                     transform: rotate(90deg) translateX(2px);
                     margin-left: 0;
